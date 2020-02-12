@@ -1,0 +1,11 @@
+<h1>restaurants index.html</h1>
+<%= link_to 'Add a restaurant!', new_restaurant_path, class:"btn btn-primary" %>
+
+<%  @restaurants.each do |restaurant| %>
+<h2> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h2>
+<p><%= restaurant.category %></p>
+<p><%= restaurant.address %></p>
+<p><%= restaurant.phone_number %></p>
+<%= link_to "Modifier", edit_restaurant_path(restaurant), class:"btn btn-primary" %>
+<%= link_to "Supp", restaurant_path(restaurant), method: :delete, class:"btn btn-danger" %>
+<% end %>
